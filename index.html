@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public School and College Skardu | Class 9 CS Unit 7 MCQs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f4b; --navy2:#12306f; --blue:#2563eb; --sky:#38bdf8; --teal:#0ea5a4;
+    --gold:#f5b72e; --gold-d:#d99a0b; --ink:#0f1b3a; --muted:#5d6b88; --line:#e1e7f3;
+    --bg:#eef3fb; --ok:#13a05a; --ok-bg:#e6f8ee; --bad:#e0383e; --bad-bg:#fdeceb;
+    --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:"Poppins","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:var(--sans); color:var(--ink); line-height:1.55; min-height:100vh;
+    background:
+      radial-gradient(1200px 500px at 10% -10%, #dbe8ff 0, transparent 60%),
+      radial-gradient(900px 500px at 100% 0, #d6f4f3 0, transparent 55%),
+      var(--bg);
+    padding:22px 14px 40px;
+  }
+  .hidden{display:none !important}
+  .shell{max-width:760px; margin:0 auto}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative; overflow:hidden; color:#fff; border-radius:26px 26px 0 0;
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 55%,#1b4fb3 100%);
+    padding:34px 24px 118px; text-align:center;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 85% 18%, rgba(245,183,46,.35) 0, transparent 14%),
+      radial-gradient(circle at 15% 30%, rgba(56,189,248,.18) 0, transparent 28%);
+  }
+  .hero > *{position:relative}
+  .crest{
+    width:78px; height:78px; margin:0 auto 14px; border-radius:50%;
+    background:linear-gradient(145deg,#ffd666,var(--gold-d)); display:grid; place-items:center;
+    box-shadow:0 0 0 5px rgba(255,255,255,.18), 0 10px 26px rgba(0,0,0,.28);
+  }
+  .crest svg{width:42px; height:42px}
+  .hero h1{
+    font-family:var(--serif); font-weight:800; margin:0; font-size:clamp(1.55rem,5.2vw,2.35rem);
+    line-height:1.2; letter-spacing:.2px;
+  }
+  .hero .loc{margin:8px 0 0; color:#c8d6f5; font-size:.95rem; font-weight:500}
+  .rule{width:70px; height:4px; border-radius:4px; margin:18px auto 14px; background:linear-gradient(90deg,var(--gold),#ffe08a)}
+  .hero .sub{margin:0; font-size:1.02rem; font-weight:600}
+  .hero .sub2{margin:2px 0 0; font-size:.86rem; color:#b9c8ec}
+  .peaks{position:absolute; left:0; right:0; bottom:-1px; width:100%; height:110px; display:block}
+
+  /* ===== CARD ===== */
+  .card{
+    background:#fff; border-radius:0 0 26px 26px; padding:8px 26px 30px;
+    box-shadow:0 24px 50px -20px rgba(11,31,75,.35);
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0 22px}
+  .chip{
+    background:#f1f6ff; color:var(--navy2); border:1px solid #d9e5fb; padding:6px 13px;
+    border-radius:99px; font-size:.8rem; font-weight:600;
+  }
+  .form-title{font-family:var(--serif); font-size:1.3rem; margin:0 0 4px; text-align:center}
+  .form-sub{margin:0 0 20px; text-align:center; color:var(--muted); font-size:.9rem}
+  .field{margin-bottom:16px}
+  label{display:block; font-weight:600; font-size:.85rem; margin-bottom:6px; color:var(--navy2)}
+  .inp{position:relative}
+  .inp svg{position:absolute; left:14px; top:50%; transform:translateY(-50%); width:19px; height:19px; stroke:#8a98b8}
+  input[type=text]{
+    width:100%; padding:13px 14px 13px 44px; font:500 1rem var(--sans); color:var(--ink);
+    background:#f7f9fd; border:1.5px solid var(--line); border-radius:12px; transition:.2s;
+  }
+  input[type=text]:focus{outline:0; background:#fff; border-color:var(--blue); box-shadow:0 0 0 4px rgba(37,99,235,.14)}
+  .err{color:var(--bad); font-size:.85rem; min-height:1.3em; margin:0 0 10px; font-weight:500}
+  button{font-family:var(--sans); cursor:pointer; border:0}
+  .btn{
+    width:100%; padding:14px 22px; border-radius:14px; font-size:1.02rem; font-weight:700; color:#fff;
+    background:linear-gradient(135deg,var(--blue),#1d4ed8 60%,var(--navy2));
+    box-shadow:0 12px 24px -10px rgba(37,99,235,.7); transition:transform .15s, box-shadow .15s;
+  }
+  .btn:hover:not(:disabled){transform:translateY(-2px); box-shadow:0 16px 28px -10px rgba(37,99,235,.8)}
+  .btn:focus-visible{outline:3px solid #bcd0ff; outline-offset:3px}
+  .btn:disabled{background:#c9d1e2; box-shadow:none; cursor:not-allowed}
+  .btn.gold{color:#4a3300; background:linear-gradient(135deg,#ffd666,var(--gold)); box-shadow:0 12px 24px -10px rgba(217,154,11,.8)}
+  .foot{margin:22px 0 0; text-align:center; color:var(--muted); font-size:.78rem}
+
+  /* ===== QUIZ ===== */
+  .qhead{display:flex; justify-content:space-between; align-items:center; gap:10px; margin:18px 0 10px; flex-wrap:wrap}
+  .who{display:flex; align-items:center; gap:10px; min-width:0}
+  .avatar{
+    flex:none; width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--teal)); color:#fff; font-weight:700;
+  }
+  .who b{display:block; font-size:.92rem; line-height:1.2; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:42vw}
+  .who small{color:var(--muted); font-size:.75rem}
+  .score-pill{
+    background:linear-gradient(135deg,#fff7e0,#ffeab0); color:#7a5300; font-weight:700; font-size:.85rem;
+    padding:7px 14px; border-radius:99px; border:1px solid #f4d78a;
+  }
+  .prog{display:flex; justify-content:space-between; font-size:.8rem; color:var(--muted); font-weight:600; margin-bottom:6px}
+  .bar{height:10px; background:#e7edf8; border-radius:99px; overflow:hidden; margin-bottom:22px}
+  .bar i{display:block; height:100%; width:0; border-radius:99px; background:linear-gradient(90deg,var(--sky),var(--blue),var(--teal)); transition:width .35s}
+  .stim{
+    background:linear-gradient(135deg,#f1f6ff,#eefaf9); border:1px solid #d6e4fb; border-left:5px solid var(--teal);
+    border-radius:12px; padding:13px 16px; margin-bottom:18px; font-size:.9rem;
+  }
+  .stim strong{display:block; color:var(--navy2); margin-bottom:3px}
+  .q{font-family:var(--serif); font-size:1.28rem; font-weight:700; line-height:1.4; margin:0 0 18px; overflow-wrap:anywhere}
+  .opts{display:grid; gap:11px; margin:0; padding:0; list-style:none}
+  .opt{
+    display:flex; align-items:center; gap:14px; width:100%; text-align:left; background:#fff; color:var(--ink);
+    border:2px solid var(--line); border-radius:14px; padding:12px 14px; font:500 1rem var(--sans);
+    overflow-wrap:anywhere; transition:border-color .15s, background .15s, transform .15s, box-shadow .15s;
+  }
+  .opt .k{
+    flex:none; width:34px; height:34px; border-radius:10px; display:grid; place-items:center;
+    background:#eef3fc; color:var(--navy2); font-weight:700; transition:.15s;
+  }
+  .opt:hover:not(:disabled){border-color:var(--blue); background:#f5f8ff; transform:translateX(3px); box-shadow:0 8px 18px -12px rgba(37,99,235,.6)}
+  .opt:hover:not(:disabled) .k{background:var(--blue); color:#fff}
+  .opt:focus-visible{outline:3px solid #bcd0ff; outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt.correct{background:var(--ok-bg); border-color:var(--ok); color:#0b6b3b; animation:pop .3s}
+  .opt.correct .k{background:var(--ok); color:#fff}
+  .opt.wrong{background:var(--bad-bg); border-color:var(--bad); color:#9b2227; animation:shake .35s}
+  .opt.wrong .k{background:var(--bad); color:#fff}
+  .opt.dim{opacity:.5}
+  @keyframes pop{50%{transform:scale(1.02)}}
+  @keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .note{margin:16px 0 0; min-height:1.6em; font-weight:600; font-size:.93rem}
+  .note.ok{color:var(--ok)} .note.bad{color:var(--bad)}
+  .nav{margin-top:12px; display:flex; justify-content:flex-end}
+  .nav .btn{width:auto; min-width:150px}
+
+  /* ===== RESULT ===== */
+  .res{text-align:center; padding-top:22px}
+  .badge{font-size:3rem; line-height:1}
+  .res h2{font-family:var(--serif); font-size:1.9rem; margin:8px 0 6px}
+  .greet{color:var(--muted); margin:0 auto 22px; max-width:460px}
+  .ring{
+    --p:0; width:170px; height:170px; margin:0 auto 22px; border-radius:50%;
+    background:conic-gradient(var(--gold) calc(var(--p)*1%), #e7edf8 0); display:grid; place-items:center;
+    box-shadow:0 14px 30px -14px rgba(11,31,75,.4);
+  }
+  .ring div{width:134px; height:134px; border-radius:50%; background:#fff; display:grid; place-items:center; align-content:center}
+  .ring b{font-family:var(--serif); font-size:2.3rem; line-height:1}
+  .ring span{font-size:.75rem; color:var(--muted); font-weight:600}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 auto 20px; max-width:440px}
+  .stat{border-radius:14px; padding:12px 6px}
+  .stat b{display:block; font-size:1.4rem}
+  .stat span{font-size:.75rem; font-weight:600}
+  .s1{background:var(--ok-bg); color:#0b6b3b} .s2{background:var(--bad-bg); color:#9b2227} .s3{background:#eaf1ff; color:var(--navy2)}
+  .ident{
+    max-width:440px; margin:0 auto 24px; border:1px dashed #c3d1ee; border-radius:14px; padding:12px 16px;
+    background:#fafcff; text-align:left; display:grid; gap:4px; font-size:.92rem;
+  }
+  .ident div{display:flex; justify-content:space-between; gap:10px}
+  .ident span{color:var(--muted)} .ident b{overflow-wrap:anywhere; text-align:right}
+  .res .btn{max-width:320px}
+  #confetti{position:fixed; inset:0; pointer-events:none; z-index:20}
+
+  @media (max-width:520px){
+    .card{padding:6px 16px 24px} .hero{padding:28px 16px 104px} .q{font-size:1.12rem}
+    .who b{max-width:34vw} .nav .btn{width:100%}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important; transition:none !important}}
+</style>
+</head>
+<body>
+<canvas id="confetti" class="hidden"></canvas>
+<div class="shell">
+
+  <!-- ===== HERO (always visible) ===== -->
+  <header class="hero">
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#0b1f4b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 8l10-5 10 5-10 5-10-5z"/><path d="M6 10.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-5.5"/><path d="M22 8v6"/>
+      </svg>
+    </div>
+    <h1>Public School and College Skardu</h1>
+    <p class="loc">Skardu, Gilgit-Baltistan, Pakistan</p>
+    <div class="rule"></div>
+    <p class="sub">Class 9 Computer Science: Online MCQ Test</p>
+    <p class="sub2">Unit 7: Entrepreneurship</p>
+    <svg class="peaks" viewBox="0 0 800 110" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="0,110 0,70 90,28 150,62 240,6 330,66 420,30 520,72 610,20 710,64 800,38 800,110" fill="#ffffff" opacity=".18"/>
+      <polygon points="0,110 0,86 110,50 190,80 300,34 390,82 500,52 600,86 700,48 800,78 800,110" fill="#ffffff" opacity=".35"/>
+      <polygon points="0,110 0,100 120,74 220,98 330,70 450,100 560,80 680,102 800,84 800,110" fill="#ffffff"/>
+    </svg>
+  </header>
+
+  <main class="card">
+
+    <!-- ===== START ===== -->
+    <section id="start">
+      <div class="chips">
+        <span class="chip" id="chipCount">113 Questions</span>
+        <span class="chip">4 Options Each</span>
+        <span class="chip">Instant Answer Feedback</span>
+        <span class="chip">Result with Percentage</span>
+      </div>
+      <h2 class="form-title">Student Registration</h2>
+      <p class="form-sub">Please enter your details to begin the test.</p>
+      <div class="field">
+        <label for="name">Student Name</label>
+        <div class="inp">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+          <input type="text" id="name" placeholder="Enter your full name" autocomplete="name" maxlength="60">
+        </div>
+      </div>
+      <div class="field">
+        <label for="roll">Roll Number</label>
+        <div class="inp">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></svg>
+          <input type="text" id="roll" placeholder="Enter roll number (digits only)" autocomplete="off" inputmode="numeric" pattern="[0-9]*" maxlength="6">
+        </div>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn" id="startBtn">Start Test</button>
+      <p class="foot">Select one option per question. Correct answers are shown immediately.</p>
+    </section>
+
+    <!-- ===== QUIZ ===== -->
+    <section id="quiz" class="hidden">
+      <div class="qhead">
+        <div class="who">
+          <div class="avatar" id="avatar">S</div>
+          <div><b id="whoName"></b><small id="whoRoll"></small></div>
+        </div>
+        <div class="score-pill">Score: <span id="sc">0</span></div>
+      </div>
+      <div class="prog"><span>Question <span id="idx">1</span> of <span id="tot">0</span></span><span id="pctDone">0%</span></div>
+      <div class="bar"><i id="fill"></i></div>
+      <div id="stim" class="stim hidden"></div>
+      <p class="q" id="qtext"></p>
+      <ul class="opts" id="opts"></ul>
+      <p class="note" id="note" aria-live="polite"></p>
+      <div class="nav"><button class="btn" id="nextBtn" disabled>Next Question</button></div>
+    </section>
+
+    <!-- ===== RESULT ===== -->
+    <section id="result" class="hidden res">
+      <div class="badge" id="rBadge">🏆</div>
+      <h2 id="rTitle">Result</h2>
+      <p class="greet" id="rGreet"></p>
+      <div class="ring" id="ring"><div><b id="rPct">0%</b><span>Percentage</span></div></div>
+      <div class="stats">
+        <div class="stat s1"><b id="rOk">0</b><span>Correct</span></div>
+        <div class="stat s2"><b id="rBad">0</b><span>Wrong</span></div>
+        <div class="stat s3"><b id="rTot">0</b><span>Total</span></div>
+      </div>
+      <div class="ident">
+        <div><span>Student Name</span><b id="rName"></b></div>
+        <div><span>Roll Number</span><b id="rRoll"></b></div>
+        <div><span>Score</span><b id="rScore"></b></div>
+        <div><span>Institution</span><b>Public School and College Skardu</b></div>
+      </div>
+      <button class="btn gold" id="again">Retake Test</button>
+    </section>
+  </main>
+</div>
+
+<script>
+const QUESTIONS = [{"n": 1, "q": "Entrepreneurship is best defined as the process of:", "o": ["Avoiding business uncertainty", "Creating an enterprise via calculated risks", "Working strictly as a salaried employee", "Eliminating technological innovation"], "a": 1}, {"n": 2, "q": "Which of the following is an intangible factor in entrepreneurship?", "o": ["Physical land", "Mobilizing scientific advances", "Manual factory labor", "Raw manufacturing material"], "a": 1}, {"n": 3, "q": "How does an entrepreneur shift economic resources?", "o": ["High to low productivity", "Lower to higher productivity & yield", "Private to public taxation", "Profitable to non-profit sectors"], "a": 1}, {"n": 4, "q": "How do successful entrepreneurs approach financial risk?", "o": ["Wild gambling", "Preference for moderate, calculated risk", "Complete risk avoidance", "Transferring all risk to customers"], "a": 1}, {"n": 5, "q": "Why must start-up founders demonstrate high self-reliance early on?", "o": ["Unlimited staffing budgets", "Limited resources require filling multiple roles", "Government manages daily tasks", "Competitors handle operations"], "a": 1}, {"n": 6, "q": "Which trait describes \"grit\" and intense focus on a long-term goal?", "o": ["Future orientation", "Determination", "Immediate feedback", "Skill at organizing"], "a": 1}, {"n": 7, "q": "What is the primary motivating force for most entrepreneurs?", "o": ["Purely hoarding cash", "Value of achievement over money", "Avoiding personal responsibility", "Following routine schedules"], "a": 1}, {"n": 8, "q": "Which of the following is a recognized drawback of entrepreneurship?", "o": ["Unlimited guaranteed income", "Income uncertainty & high stress levels", "Zero decision-making burden", "Short, relaxed working hours"], "a": 1}, {"n": 9, "q": "Which statement accurately characterizes Design Thinking?", "o": ["Rigid, strictly linear sequence", "Iterative, non-linear human-centered process", "Automated accounting software", "Legal patent filing procedure"], "a": 1}, {"n": 10, "q": "What is the correct order of the five stages of Design Thinking?", "o": ["Ideate, Define, Empathize, Test, Prototype", "Empathize, Define, Ideate, Prototype, Test", "Define, Empathize, Prototype, Ideate, Test", "Prototype, Test, Empathize, Define, Ideate"], "a": 1}, {"n": 11, "q": "During which Design Thinking stage are users observed and interviewed?", "o": ["Ideate", "Empathize", "Prototype", "Define"], "a": 1}, {"n": 12, "q": "Why are sample models built in the Prototype stage?", "o": ["To finalize mass production", "To learn fast, cheap, and early", "To replace user feedback", "To calculate annual tax returns"], "a": 1}, {"n": 13, "q": "Which Pakistani institution is noted for implementing Design Thinking?", "o": ["State Bank Archive", "IBA Karachi / NUST / COMSATS", "Pakistan Bureau of Statistics", "Chamber of Commerce"], "a": 1}, {"n": 14, "q": "What are the two primary goals of a business plan?", "o": ["Hire staff & pay taxes", "Guide launch & acquire financing", "Eliminate rivals & fix monopolies", "Replace marketing & sales"], "a": 1}, {"n": 15, "q": "Which business planning software includes 500+ templates and investor pitch guides?", "o": ["PlanMaker", "Business Plan Pro (LivePlan)", "WordPress CMS", "MS Excel"], "a": 1}, {"n": 16, "q": "PlanMaker is primarily a spreadsheet application within which suite?", "o": ["Adobe Creative Cloud", "SoftMaker Office suite", "Palo Alto Software", "Google Workspace"], "a": 1}, {"n": 17, "q": "Which open-source CMS powers over half of the world's web content?", "o": ["Canva", "WordPress", "PlanWrite", "LivePlan"], "a": 1}, {"n": 18, "q": "Observing surroundings and basing actions on needs belongs to which skill category?", "o": ["Conducting myself", "Thinking skills", "My safety and survival", "Interacting with people"], "a": 1}, {"n": 19, "q": "How should an entrepreneur generate small business ideas for their community?", "o": ["Copy foreign monopolies blindly", "Identify community difficulties & solve them", "Ignore local skill sets", "Focus only on luxury imports"], "a": 1}, {"n": 20, "q": "In market terminology, how are \"customers\" strictly defined?", "o": ["Anyone browsing a store", "People who need & are willing to pay for a product", "Rival business owners", "Raw material suppliers"], "a": 1}, {"n": 21, "q": "What is the correct formula for fixing a product's selling price?", "o": ["Cost − Overheads + Profit", "Cost of production + Overheads + Profit", "Overheads − Cost + Profit", "Cost × Overheads ÷ Profit"], "a": 1}, {"n": 22, "q": "Gradual loss in equipment value over time is accounted for as:", "o": ["Gross markup", "Depreciation of equipment", "Seasonal promotion", "Variable raw material"], "a": 1}, {"n": 23, "q": "When supply is large but very few people want to buy, what happens to prices?", "o": ["Prices rise sharply", "Prices may drop", "Profit margins double", "Production costs vanish"], "a": 1}, {"n": 24, "q": "Why is the Executive Summary written last despite appearing first?", "o": ["It lists raw receipts", "It condenses the completed business plan", "It is optional for investors", "It replaces financial budgets"], "a": 1}, {"n": 25, "q": "What is the recommended maximum length for an Executive Summary?", "o": ["Ten pages", "One page", "Fifty pages", "Half a paragraph"], "a": 1}, {"n": 26, "q": "In SMART goals, what does the letter \"M\" stand for?", "o": ["Marketable", "Measurable (quantifiable)", "Manageable", "Motivational"], "a": 1}, {"n": 27, "q": "Setting a deadline (\"stop watch\") to review goals satisfies which SMART criterion?", "o": ["Specific", "Time-Bound", "Realistic", "Achievable"], "a": 1}, {"n": 28, "q": "Which four components comprise a SWOT market analysis?", "o": ["Sales, Wealth, Output, Taxes", "Strengths, Weaknesses, Opportunities, Threats", "Strategy, Work, Operations, Time", "Supply, Wages, Overheads, Targets"], "a": 1}, {"n": 29, "q": "Which of these is listed among the 11 Small Business Ideas for new entrepreneurs?", "o": ["Oil refining", "Dropshipping / Podcasting / Consulting", "Commercial aviation", "Heavy steel manufacturing"], "a": 1}, {"n": 30, "q": "Which primary parameters define a target market client sketch?", "o": ["Political party & height", "Education, age brackets & geography", "Blood type & shoe size", "Tax bracket & bank password"], "a": 1}, {"n": 31, "q": "Which reports must be reviewed periodically in a startup's budget section?", "o": ["Medical & weather logs", "Balance sheet, cash-flow & income reports", "Attendance & leave rosters", "Social media follower lists"], "a": 1}, {"n": 32, "q": "Which expenses are included in Cost of Goods Sold (COGS) for candy making?", "o": ["Office rent & insurance", "Raw materials, production labor & packaging", "Promotional billboards", "Equipment depreciation"], "a": 1}, {"n": 33, "q": "If workers earn Rs. 15/hr for 2 hours to make 100 candies, what is labor cost per candy?", "o": ["Rs. 3.00", "Rs. 0.30", "Rs. 0.15", "Rs. 1.50"], "a": 1}, {"n": 34, "q": "Monthly rent of Rs. 500 divided across 500 candies produced equals what fixed cost per unit?", "o": ["Rs. 0.10", "Rs. 1.00", "Rs. 5.00", "Rs. 10.00"], "a": 1}, {"n": 35, "q": "Which formula calculates Selling Price using a markup percentage?", "o": ["Cost Price − (Markup % × Cost Price)", "Cost Price + (Markup % × Cost Price)", "Markup % ÷ Cost Price", "Cost Price × Selling Price"], "a": 1}, {"n": 36, "q": "If cost price is Rs. 72.35 and selling price is Rs. 100, what is the Gross Profit Margin?", "o": ["50.00%", "27.65%", "72.35%", "18.50%"], "a": 1}, {"n": 37, "q": "Selling 1,000 candies at Rs. 100 each with COGS of Rs. 72.35/unit yields what total profit?", "o": ["Rs. 100,000", "Rs. 27,650", "Rs. 72,350", "Rs. 2,765"], "a": 1}, {"n": 38, "q": "Which of the following is a core function of an entrepreneur?", "o": ["Only risk bearing", "Risk bearing, innovation, organizing & managing", "Only routine bookkeeping", "Avoiding market expansion"], "a": 1}, {"n": 39, "q": "An entrepreneur who improves product quality via invention and discovery is a:", "o": ["Novice entrepreneur", "Technical entrepreneur", "Imitative entrepreneur", "Drone entrepreneur"], "a": 1}, {"n": 40, "q": "An entrepreneur who introduces new ideas, production methods, and new markets is an:", "o": ["Novice entrepreneur", "Innovative entrepreneur", "Fabian entrepreneur", "Technical entrepreneur"], "a": 1}, {"n": 41, "q": "How does active entrepreneurship affect a country's Gross National Product (GNP)?", "o": ["Decreases GNP", "Increases GNP", "Has zero effect on GNP", "Eliminates exports"], "a": 1}, {"n": 42, "q": "What impact does entrepreneurship have on national unemployment rates?", "o": ["Increases unemployment", "Decreases unemployment", "Leaves employment unchanged", "Eliminates private jobs"], "a": 1}, {"n": 43, "q": "What role does a stable and dynamic political environment play in business growth?", "o": ["Negative role", "Positive role in business growth", "No role at all", "Stops innovation"], "a": 1}, {"n": 44, "q": "Which resource is recommended for students in Pakistan to check sector market sizes?", "o": ["Canva Templates", "SMEDA (smeda.org.pk)", "SoftMaker Office", "Palo Alto Guides"], "a": 1}, {"n": 45, "q": "Which organizations provide financial feasibility data and growth trends in Pakistan?", "o": ["Local sports clubs", "PBS, Chamber of Commerce & ITC TradeMap", "Social media influencers", "Graphic design studios"], "a": 1}];
+
+const $ = id => document.getElementById(id);
+let i = 0, score = 0, answered = false, user = {name:"", roll:""};
+$("chipCount").textContent = QUESTIONS.length + " Questions";
+
+function show(id){
+  ["start","quiz","result"].forEach(s => $(s).classList.toggle("hidden", s !== id));
+  document.querySelector(".card").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+$("startBtn").addEventListener("click", () => {
+  const name = $("name").value.trim(), roll = $("roll").value.trim();
+  if(!name || !roll){
+    $("err").textContent = "Please enter both your name and roll number to continue.";
+    (name ? $("roll") : $("name")).focus();
+    return;
+  }
+  $("err").textContent = "";
+  user = {name, roll};
+  i = 0; score = 0;
+  $("whoName").textContent = name;
+  $("whoRoll").textContent = "Roll No. " + roll;
+  $("avatar").textContent = name.charAt(0).toUpperCase();
+  $("tot").textContent = QUESTIONS.length;
+  show("quiz");
+  render();
+});
+$("roll").addEventListener("input", e => { e.target.value = e.target.value.replace(/\D/g, ""); });
+["name","roll"].forEach(id => $(id).addEventListener("keydown", e => { if(e.key === "Enter") $("startBtn").click(); }));
+
+function render(){
+  answered = false;
+  const q = QUESTIONS[i];
+  $("idx").textContent = i + 1;
+  $("sc").textContent = score;
+  const done = Math.round(i / QUESTIONS.length * 100);
+  $("fill").style.width = done + "%";
+  $("pctDone").textContent = done + "% complete";
+  const st = $("stim");
+  if(q.s){
+    st.classList.remove("hidden"); st.innerHTML = "";
+    const b = document.createElement("strong"); b.textContent = "Scenario: " + q.s.t;
+    const p = document.createElement("span"); p.textContent = q.s.x;
+    st.append(b, p);
+  } else st.classList.add("hidden");
+  $("qtext").textContent = (i + 1) + ". " + q.q;
+  const ul = $("opts"); ul.innerHTML = "";
+  q.o.forEach((text, k) => {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    btn.className = "opt"; btn.type = "button";
+    const key = document.createElement("span"); key.className = "k"; key.textContent = "ABCD"[k];
+    const lab = document.createElement("span"); lab.textContent = text;
+    btn.append(key, lab);
+    btn.addEventListener("click", () => choose(k));
+    li.appendChild(btn); ul.appendChild(li);
+  });
+  $("note").textContent = ""; $("note").className = "note";
+  $("nextBtn").disabled = true;
+  $("nextBtn").textContent = i === QUESTIONS.length - 1 ? "Finish & View Result" : "Next Question";
+}
+
+function choose(k){
+  if(answered) return;
+  answered = true;
+  const q = QUESTIONS[i];
+  document.querySelectorAll("#opts .opt").forEach((b, n) => {
+    b.disabled = true;
+    if(n === q.a) b.classList.add("correct");
+    else if(n === k) b.classList.add("wrong");
+    else b.classList.add("dim");
+  });
+  const note = $("note");
+  if(k === q.a){
+    score++;
+    note.textContent = "Correct! Well done."; note.classList.add("ok");
+  } else {
+    note.textContent = "Incorrect. The correct answer is " + "ABCD"[q.a] + ": " + q.o[q.a];
+    note.classList.add("bad");
+  }
+  $("sc").textContent = score;
+  $("nextBtn").disabled = false;
+  $("nextBtn").focus({preventScroll:true});
+}
+
+$("nextBtn").addEventListener("click", () => {
+  if(i < QUESTIONS.length - 1){ i++; render(); window.scrollTo({top:document.querySelector(".card").offsetTop - 10, behavior:"smooth"}); }
+  else finish();
+});
+
+function finish(){
+  const total = QUESTIONS.length;
+  const pct = Math.round(score / total * 100);
+  let badge, title, msg;
+  const n = user.name;
+  if(pct >= 90){ badge="🏆"; title="Outstanding Performance!"; msg="Congratulations, " + n + "! Excellent command of programming fundamentals. Keep up the brilliant work."; }
+  else if(pct >= 75){ badge="🌟"; title="Great Job!"; msg="Well done, " + n + "! You have a strong understanding of the topics. A little more practice will take you to the top."; }
+  else if(pct >= 50){ badge="👍"; title="Good Effort!"; msg="Nice attempt, " + n + ". Review the weaker topics once more and you will see a big improvement."; }
+  else { badge="📚"; title="Keep Practising!"; msg="Do not be discouraged, " + n + ". Revise the chapter and try again. Consistent practice brings success."; }
+  $("rBadge").textContent = badge;
+  $("rTitle").textContent = title;
+  $("rGreet").textContent = msg;
+  $("rName").textContent = user.name;
+  $("rRoll").textContent = user.roll;
+  $("rOk").textContent = score;
+  $("rBad").textContent = total - score;
+  $("rTot").textContent = total;
+  $("rScore").textContent = score + " / " + total;
+  $("fill").style.width = "100%";
+  show("result");
+  // animate ring
+  let cur = 0; const ring = $("ring"), pt = $("rPct");
+  const t = setInterval(() => {
+    cur = Math.min(pct, cur + Math.max(1, Math.round(pct / 40)));
+    ring.style.setProperty("--p", cur); pt.textContent = cur + "%";
+    if(cur >= pct) clearInterval(t);
+  }, 22);
+  if(pct >= 50) confetti();
+}
+
+$("again").addEventListener("click", () => {
+  $("name").value = user.name; $("roll").value = user.roll;
+  show("start");
+});
+
+/* lightweight confetti */
+function confetti(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const c = $("confetti"), ctx = c.getContext("2d");
+  c.classList.remove("hidden");
+  c.width = innerWidth; c.height = innerHeight;
+  const cols = ["#f5b72e","#2563eb","#0ea5a4","#38bdf8","#e0383e","#13a05a"];
+  const ps = Array.from({length:120}, () => ({
+    x:Math.random()*c.width, y:-20-Math.random()*c.height*.5, r:4+Math.random()*5,
+    vx:-1.5+Math.random()*3, vy:2+Math.random()*3.5, col:cols[(Math.random()*cols.length)|0], rot:Math.random()*6
+  }));
+  let frames = 0;
+  (function tick(){
+    ctx.clearRect(0,0,c.width,c.height);
+    ps.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.rot += .1;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.col; ctx.fillRect(-p.r, -p.r/2, p.r*2, p.r);
+      ctx.restore();
+    });
+    if(++frames < 220) requestAnimationFrame(tick);
+    else { ctx.clearRect(0,0,c.width,c.height); c.classList.add("hidden"); }
+  })();
+}
+</script>
+</body>
+</html>
